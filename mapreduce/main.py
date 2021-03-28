@@ -13,6 +13,7 @@ __credits__ = ''
 __description__ = 'MapReduce in Pure Python'
 
 
+import string
 import operator
 import argparse
 from mapreduce import MapReduce
@@ -84,6 +85,12 @@ def mapper(data):
         output(list<tuple>): list of <word-value> data
     """
     output = list()
+    # remove punctuation
+    table = str.maketrans(dict.fromkeys(string.punctuation))
+    data = data.translate(table)
+    # remove leading and trailing whitespace
+    data = data.stript()
+    # split the line into words
     words = data.split()
     for word in words:
         word = word.lower()
