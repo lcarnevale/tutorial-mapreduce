@@ -36,7 +36,7 @@ class MapReduce(object):
             partitioned_data[key].append(value)
         return partitioned_data.items()
     
-    def __call__(self, inputs, chunksize=1000):
+    def __call__(self, inputs, chunksize=1):
         """Process the inputs through the map and reduce functions given.
         
         Args:
