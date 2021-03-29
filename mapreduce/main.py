@@ -89,7 +89,7 @@ def mapper(data):
     table = str.maketrans(dict.fromkeys(string.punctuation))
     data = data.translate(table)
     # remove leading and trailing whitespace
-    data = data.stript()
+    data = data.strip()
     # split the line into words
     words = data.split()
     for word in words:
